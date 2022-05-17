@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Keep America Beautiful</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="form.js"></script>
+<script src="confidence.js"></script>
+
+</head>
+<body>
+
+<section class="entry-form">
+  <h1>Enter a Location</h1>
+
+  <form name="totalForm" action="/query" method="POST">
+    <div class="input">
+      <input id="enter-city" name="type" type="radio" value="1" />
+      <label class="inline" for="enter-city">City</label>
+      
+      <input id="enter-addr" name="type" type="radio" value="2"/>
+      <label class="inline" for="enter-addr">Address</label>
+      
+      <input id="enter-coord" name="type" type="radio" value="3"/>
+      <label class="inline" for="enter-coord">Coordinate</label>
+
+    </div>
+    
+    <div class="input-group" id = "addresses">
+      <label for="addr">Address</label>
+      <input id="addr" name="addr" type="text"/>
+    </div>
+    
+    <div class="input-group" id = "cities">
+      <label for="city">City</label>
+      <input id="city" name="city" type="text" placeholder="city, state, country"/>
+    </div>
+
+    <div class="input-group" id = "latitudes">
+      <label for="lat">Latitude</label>
+      <input id="lat" name="lat" type="text"/>
+    </div>
+
+    <div class="input-group" id = "longitudes">
+      <label for="long">Longitude</label>
+      <input id="long" name="long" type="text"/>
+    </div>
+    
+    <div class="input-group" id = "ranges">
+        <label for="searchMeters">Search Range in meters</label>
+        <input id="range" name="range" type="text" placeholder="(1 mile = 1600 meters)"/>
+    </div>
+    <!--
+    <div class="input-group" id = "states">
+      <label for="state">State/Territory</label>
+      <select id="state" name="state">
+        <option>AL</option>
+        <option>AK</option>
+        <option>AZ</option>
+        <option>AR</option>
+        <option>CA</option>
+        <option>CO</option>
+        <option>CT</option>
+        <option>DE</option>
+        <option>DC</option>
+        <option>FL</option>
+        <option>GA</option>
+        <option>GU</option>
+        <option>HI</option>
+        <option>ID</option>
+        <option>IL</option>
+        <option>IN</option>
+        <option>IA</option>
+        <option>KS</option>
+        <option>KY</option>
+        <option>LA</option>
+        <option>ME</option>
+        <option>MD</option>
+        <option>MA</option>
+        <option>MI</option>
+        <option>MN</option>
+        <option>MS</option>
+        <option>MO</option>
+        <option>MT</option>
+        <option>NE</option>
+        <option>NV</option>
+        <option>NH</option>
+        <option>NJ</option>
+        <option>NM</option>
+        <option>NY</option>
+        <option>NC</option>
+        <option>ND</option>
+        <option>CM</option>
+        <option>OH</option>
+        <option>OK</option>
+        <option>OR</option>
+        <option>PA</option>
+        <option>PR</option>
+        <option>RI</option>
+        <option>SC</option>
+        <option>SD</option>
+        <option>TN</option>
+        <option>TX</option>
+        <option>TT</option>
+        <option>UT</option>
+        <option>VT</option>
+        <option>VA</option>
+        <option>VI</option>
+        <option>WA</option>
+        <option>WV</option>
+        <option>WI</option>
+        <option>WY</option>
+      </select>
+    </div>
+    -->
+
+    <div class="input-group" id = "email" style="display:none">
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="text" />
+    </div>
+    <div class="input-group"></div>
+    <button id="btn1" onclick="onClick()"></button>
+    <h3 id="head1"></h3>
+    </div>
+
+
+
+  </form>
+</section>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.13.0/polyfill.min.js'></script><script  src="./form.js"></script>
+
+</body>
+</html>

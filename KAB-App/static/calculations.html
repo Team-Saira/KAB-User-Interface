@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <html lang="en" >
+        <head>
+        <meta charset="UTF-8">
+        <title>Keep America Beautiful</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="form.js"></script>
+        <script src="confidence.js"></script>
+
+        </head>
+    <body>
+        <div class="container" >
+            <h1>Sample Size Calculator</h1>
+            <form id="calc" name="calc">
+              <table class="table">
+              
+                <tr>
+                  <td>Confidence Level:</td>
+                  <td>
+                    <label class="radio-inline"><input checked name="ConLevBut" onclick="ConLevButF1(this.form)" type="radio"
+                        value="1"> 95%</label>
+                    <label class="radio-inline"><input name="ConLevBut" onclick="ConLevButF2(this.form)" type="radio" value="2">
+                      99%</label>
+                  </td>
+                </tr>
+          
+                <tr>
+                  <td>Margin of Error:</td>
+                  <td><input name="box" type="text"></td>
+                </tr>
+          
+                <tr>
+                  <td>Population:</td>
+                  <td><input name="popbox" onkeyup="this.value=iVal(this.value)" type="text"></td>
+                </tr>
+          
+                <tr>
+                  <td><input class="btn btn-primary" name="Calculate" onclick="to(this.form)" type="button" value="Calculate">
+                  </td>
+                  <td><input class="btn btn-default" name="Clear" onclick="cler(this.form,'')" type="button" value=" Clear "></td>
+                </tr>
+          
+                <tr>
+                  <td>Sample size needed:</td>
+                  <td><input name="ssbox" type="text"></td>
+                </tr>
+              </table>
+            </form>
+        </div>
+      
+        <div class="container">
+            <h1>Cost Calculator</h1>
+              
+              <form id="calc1" name="calc1">
+                <table class="table">
+                  <tr>
+                    <td>Number of Points:</td>
+                    <td><input name="pbox" type="text"></td>
+                  </tr>
+        
+                  <tr>
+                    <td><input class="btn btn-primary" name="Calculate" onclick="ct(this.form)" type="button" value="Calculate"></td>
+                    <td><input class="btn btn-default" name="Clear" onclick="cler(this.form,'')" type="button" value=" Clear "></td>
+                  </tr>
+          
+                  <tr>
+                    <td>Cost to Pull:</td>
+                    <td><input name="cbox" type="text"></td>
+                  </tr>
+        
+                </table>
+              </form>
+            </div>
+
+            <form action="/getcalc" method="POST">
+                <div class="inputChocie">
+                    <p>Grab Images</p>
+                    <br>
+                    <input id="enter-yes" name="type2" type="radio" value="yes" />
+                    <label class="inline" for="enter-yes">Yes</label>
+                    
+                    <input id="enter-no" name="type2" type="radio" value="no"/>
+                    <label class="inline" for="enter-no">No</label>              
+                </div>
+
+                <div class="calc-form" id = "userchoices">
+                    <label for="choice">Points to pull?</label>
+                    <input id="choice" name="choice" type="text"/>
+                  </div>
+                
+                <button id="btn1" onclick="onClick()">Submit!</button>
+            </form>
+    </body>
+</html>
